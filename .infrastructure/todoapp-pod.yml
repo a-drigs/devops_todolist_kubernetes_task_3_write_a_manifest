@@ -11,16 +11,15 @@ spec:
     image: adryga/todoapp:3.0.0
     ports:
     - containerPort: 8080
-livenessProbe:
-  httpGet:
-    path: /api/health/liveness/
-    port: 8080
-  initialDelaySeconds: 30
-  periodSeconds: 10
-
-readinessProbe:
-  httpGet:
-    path: /api/health/readiness/
-    port: 8080
-  initialDelaySeconds: 5
-  periodSeconds: 5
+    livenessProbe:
+      httpGet:
+        path: /api/health/liveness/
+        port: 8080
+      initialDelaySeconds: 30
+      periodSeconds: 10
+    readinessProbe:
+      httpGet:
+        path: /api/health/readiness/
+        port: 8080
+      initialDelaySeconds: 5
+      periodSeconds: 5
